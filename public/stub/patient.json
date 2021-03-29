@@ -1,0 +1,107 @@
+[
+    {
+        "id":1,
+        "fistName": "Петро",
+        "secondaryName": "Іванович",
+        "lastName": "Зубчук",
+        "adress": [{
+            "street": "вул. Комарова",
+            "suite": "12Б",
+            "country": "Україна",
+            "region": "Чернівецька область",
+            "city": "Чернівці"
+        }],
+        "birthday": "10.12.1987",
+        "phone": "+380965431783"
+    },
+    {
+        "id":2,
+        "fistName": "Іван",
+        "secondaryName": "Григорович",
+        "lastName": "Палійчук",
+        "adress": [{
+            "street": "вул. Герцена",
+            "suite": "5",
+            "country": "Україна",
+            "region": "Чернівецька область",
+            "city": "Чернівці"
+        }],
+        "birthday": "21.07.1967",
+        "phone": "+380955451791"
+    },
+    {
+        "id":3,
+        "fistName": "Петро",
+        "secondaryName": "Іванович",
+        "lastName": "Зубчук",
+        "adress": [{
+            "street": "вул. Комарова",
+            "suite": "12Б",
+            "country": "Україна",
+            "region": "Чернівецька область",
+            "city": "Чернівці"
+        }],
+        "birthday": "10.12.1987",
+        "phone": "+380965431783"
+    },
+    {
+        "id":4,
+        "fistName": "Петро",
+        "secondaryName": "Іванович",
+        "lastName": "Зубчук",
+        "adress": [{
+            "street": "вул. Комарова",
+            "suite": "12Б",
+            "country": "Україна",
+            "region": "Чернівецька область",
+            "city": "Чернівці"
+        }],
+        "birthday": "10.12.1987",
+        "phone": "+380965431783"
+    },
+    {
+        "id":5,
+        "fistName": "Петро",
+        "secondaryName": "Іванович",
+        "lastName": "Зубчук",
+        "adress": [{
+            "street": "вул. Комарова",
+            "suite": "12Б",
+            "country": "Україна",
+            "region": "Чернівецька область",
+            "city": "Чернівці"
+        }],
+        "birthday": "10.12.1987",
+        "phone": "+380965431783"
+    },
+    {
+        "id":6,
+        "fistName": "Петро",
+        "secondaryName": "Іванович",
+        "lastName": "Зубчук",
+        "adress": [{
+            "street": "вул. Комарова",
+            "suite": "12Б",
+            "country": "Україна",
+            "region": "Чернівецька область",
+            "city": "Чернівці"
+        }],
+        "birthday": "10.12.1987",
+        "phone": "+380965431783"
+    },
+    {
+        "id":7,
+        "fistName": "Петро",
+        "secondaryName": "Іванович",
+        "lastName": "Зубчук",
+        "adress": [{
+            "street": "вул. Комарова",
+            "suite": "12Б",
+            "country": "Україна",
+            "region": "Чернівецька область",
+            "city": "Чернівці"
+        }],
+        "birthday": "10.12.1987",
+        "phone": "+380965431783"
+    }
+]
