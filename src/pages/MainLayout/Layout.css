@@ -1,0 +1,44 @@
+.layout {
+  min-height: 100vh;
+}
+
+.footer {
+  text-align: center;
+}
+
+.logo {
+  height: 80px;
+  margin: 0px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.site-layout-main {
+  background: #fff;
+  padding: 24px;
+  min-height: 360px;
+}
+
+.header {
+  padding: 0;
+}
+
+.user-avatar {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.user-avatar > span {
+  margin-right: 20px;
+}
+
+.content-layout {
+  margin: 0 16px;
+}
+
+.breadcrumb-layout {
+  margin: 16px 0;
+}
