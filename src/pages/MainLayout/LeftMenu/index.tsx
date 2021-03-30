@@ -9,6 +9,7 @@ import {
 } from "@ant-design/icons";
 import "../Layout.css";
 import { NavLink } from "react-router-dom";
+import Logo from "./logo";
 
 function LeftMenu() {
   const { Sider } = Layout;
@@ -22,10 +23,7 @@ function LeftMenu() {
         <div className="logo">
           <Menu.Item key="0">
             <NavLink to="/" exact={true}>
-              <img
-                alt="logo"
-                src="https://img.icons8.com/dotty/80/000000/medical-mobile-app.png"
-              />
+              <Logo />
             </NavLink>
           </Menu.Item>
         </div>
