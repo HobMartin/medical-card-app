@@ -24,6 +24,7 @@ function UserInfoHeader() {
       <Dropdown placement="bottomRight" overlay={menu} trigger={["click"]}>
         <Badge count={1}>
           <Avatar
+            className="avatar"
             size={32}
             icon={<UserOutlined />}
             // src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"

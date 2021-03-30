@@ -8,6 +8,7 @@ import {
   UsergroupAddOutlined,
 } from "@ant-design/icons";
 import "../Layout.css";
+import { NavLink } from "react-router-dom";
 
 function LeftMenu() {
   const { Sider } = Layout;
@@ -17,13 +18,15 @@ function LeftMenu() {
   };
   return (
     <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-      <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
+      <Menu theme="dark" mode="inline">
         <div className="logo">
           <Menu.Item key="0">
-            <img
-              alt="logo"
-              src="https://img.icons8.com/dotty/80/000000/medical-mobile-app.png"
-            />
+            <NavLink to="/" exact={true}>
+              <img
+                alt="logo"
+                src="https://img.icons8.com/dotty/80/000000/medical-mobile-app.png"
+              />
+            </NavLink>
           </Menu.Item>
         </div>
         <Menu.Item key="1" icon={<IdcardOutlined />}>
@@ -35,9 +38,13 @@ function LeftMenu() {
         <Menu.Item key="3" icon={<CalendarOutlined />}>
           Календар
         </Menu.Item>
+
         <Menu.Item key="4" icon={<TeamOutlined />}>
-          Список пацієнтів
+          <NavLink to="/patientlist" exact={true}>
+            Список пацієнтів
+          </NavLink>
         </Menu.Item>
+
         <Menu.Item key="5" icon={<UsergroupAddOutlined />}>
           Список лікарів
         </Menu.Item>

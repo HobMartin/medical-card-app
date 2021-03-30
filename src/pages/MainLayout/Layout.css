@@ -24,11 +24,17 @@
 
 .header {
   padding: 0;
+  height: 80px;
 }
 
 .user-avatar {
+  margin-top: 10px;
   text-align: right;
   margin-right: 20px;
+}
+
+.avatar {
+  cursor: pointer;
 }
 
 .user-avatar > span {
