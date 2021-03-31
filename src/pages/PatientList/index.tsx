@@ -9,6 +9,7 @@ import {
   fetchPatientsFx,
 } from "../../features/model/getPatientData";
 import { columns } from "./columsForTable";
+import { ModalForm } from "../../features/Patients/AddPatientForm";
 
 function PatientList() {
   const patients = useStore($patients);
@@ -18,6 +19,7 @@ function PatientList() {
 
   return (
     <>
+      <ModalForm />
       <Table columns={columns} dataSource={patients} />
     </>
   );

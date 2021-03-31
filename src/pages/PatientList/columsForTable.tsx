@@ -1,5 +1,6 @@
 import { ColumnsType } from "antd/lib/table/Table";
 import { IPatient } from "../../api/interfaces/IPatient";
+import { EditOutlined } from "@ant-design/icons";
 export const columns: ColumnsType<IPatient> = [
   {
     title: "Прізвище",
@@ -35,5 +36,11 @@ export const columns: ColumnsType<IPatient> = [
     title: "Телефон",
     dataIndex: "phone",
     key: "phone",
+  },
+  {
+    title: "Редагувати",
+    dataIndex: "",
+    key: "x",
+    render: () => <EditOutlined />,
   },
 ];
