@@ -7,10 +7,11 @@ export interface IAddress {
 }
 
 export interface IPatient {
+  id: number;
   firstName: string;
   secondName: string;
   lastName: string;
   address: Array<IAddress>;
-  birthday: string;
+  birthday: Date;
   phone: string;
 }

@@ -1,6 +1,9 @@
 import { ColumnsType } from "antd/lib/table/Table";
 import { IPatient } from "../../api/interfaces/IPatient";
 import { EditOutlined } from "@ant-design/icons";
+import { drawerChange } from "../../features/model/openDrawer";
+import { updatePatient } from "../../features/model/getPatientFromTable";
+
 export const columns: ColumnsType<IPatient> = [
   {
     title: "Прізвище",
@@ -41,6 +44,13 @@ export const columns: ColumnsType<IPatient> = [
     title: "Редагувати",
     dataIndex: "",
     key: "x",
-    render: () => <EditOutlined />,
+    render: (text, record) => (
+      <EditOutlined
+        onClick={() => {
+          updatePatient(record);
+          drawerChange(true);
+        }}
+      />
+    ),
   },
 ];

@@ -19,7 +19,7 @@ function PatientList() {
 
   return (
     <>
-      <ModalForm />
+      <ModalForm patients={patients} />
       <Table columns={columns} dataSource={patients} />
     </>
   );

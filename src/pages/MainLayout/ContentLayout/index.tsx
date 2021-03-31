@@ -9,8 +9,8 @@ const ContentLayout = (props: any) => {
     <>
       <Content className="content-layout">
         <Breadcrumb className="breadcrumb-layout">
-          <Breadcrumb.Item>Пацієнт</Breadcrumb.Item>
-          <Breadcrumb.Item>Шевчук Ігор Миколайович</Breadcrumb.Item>
+          <Breadcrumb.Item>Пацієнти</Breadcrumb.Item>
+          <Breadcrumb.Item></Breadcrumb.Item>
         </Breadcrumb>
         <div className="site-layout-main">
           <main>{props.children}</main>

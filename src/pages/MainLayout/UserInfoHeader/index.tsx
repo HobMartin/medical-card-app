@@ -7,14 +7,14 @@ function UserInfoHeader() {
   const menu = (
     <Menu>
       <Menu.Item key="0">
-        <a href="#">Переглянути профіль</a>
+        <span>Переглянути профіль</span>
       </Menu.Item>
       <Menu.Item key="0">
-        <a href="#">Моя карта</a>
+        <span>Моя карта</span>
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key="0">
-        <a href="#">Вийти</a>
+        <span>Вийти</span>
       </Menu.Item>
     </Menu>
   );
