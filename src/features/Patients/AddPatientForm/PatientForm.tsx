@@ -44,77 +44,65 @@ export function PatientForm(props: any) {
       onFinish={onCreate}
       validateMessages={validateMessages}
     >
-      <Form.Item
-        name={["patient", "firstName"]}
-        label="Ім'я"
-        rules={[{ required: true }]}
-      >
+      <Form.Item name={"firstName"} label="Ім'я" rules={[{ required: true }]}>
         <Input />
       </Form.Item>
       <Form.Item
-        name={["patient", "secondaryName"]}
+        name={"secondaryName"}
         label="По батькові"
         rules={[{ required: true }]}
       >
         <Input />
       </Form.Item>
       <Form.Item
-        name={["patient", "lastName"]}
+        name={"lastName"}
         label="Прізвище"
         rules={[{ required: true }]}
       >
         <Input />
       </Form.Item>
-      <Form.Item
-        name={["patient", "email"]}
-        label="Email"
-        rules={[{ type: "email" }]}
-      >
+      <Form.Item name={"email"} label="Email" rules={[{ type: "email" }]}>
         <Input />
       </Form.Item>
       <Form.Item
-        name={["patient", "address", "country"]}
+        name={["address", "country"]}
         label="Країна"
         rules={[{ required: true }]}
       >
         <Input />
       </Form.Item>
       <Form.Item
-        name={["patient", "address", "city"]}
+        name={["address", "city"]}
         label="Місто"
         rules={[{ required: true }]}
       >
         <Input />
       </Form.Item>
       <Form.Item
-        name={["patient", "address", "region"]}
+        name={["address", "region"]}
         label="Регіон"
         rules={[{ required: true }]}
       >
         <Input />
       </Form.Item>
       <Form.Item
-        name={["patient", "address", "street"]}
+        name={["address", "street"]}
         label="Вулиця"
         rules={[{ required: true }]}
       >
         <Input />
       </Form.Item>
       <Form.Item
-        name={["patient", "address", "suite"]}
+        name={["address", "suite"]}
         label="Будинок"
         rules={[{ required: true }]}
       >
         <Input />
       </Form.Item>
-      <Form.Item
-        name={["patient", "birthday"]}
-        label="Дата народження"
-        {...config}
-      >
+      <Form.Item name={"birthday"} label="Дата народження" {...config}>
         <DatePicker format={dateFormat} />
       </Form.Item>
-      <Form.Item name={["patient", "phone"]} label="Телефон">
+      <Form.Item name={"phone"} label="Телефон">
         <Input />
       </Form.Item>
       <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}></Form.Item>
