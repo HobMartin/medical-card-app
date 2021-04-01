@@ -7,7 +7,6 @@ import {
   resetSelectedDate,
 } from "../../pages/DoctorSchedule/model/selectedDate";
 import {
-  $selectedPatient,
   setSelectedPatient,
   resetSelectedPatient,
 } from "./model/selectedPatient";
@@ -24,7 +23,6 @@ import "./TimeLineDoctor.css";
 
 export function TimeLineDoctor() {
   const selectedDate = useStore($selectedDate);
-  const selectedPatient = useStore($selectedPatient);
   const visitPatientOnToday = useStore($visitOnToday);
 
   useEffect(() => {

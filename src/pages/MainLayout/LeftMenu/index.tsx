@@ -33,8 +33,10 @@ function LeftMenu(props: any) {
             </NavLink>
           </Menu.Item>
         </div>
-        <Menu.Item key="1" icon={<IdcardOutlined />}>
-          Медична карта
+        <Menu.Item key="/mycard" icon={<IdcardOutlined />}>
+          <NavLink to="/mycard" exact={true}>
+            Медична карта
+          </NavLink>
         </Menu.Item>
         <Menu.Item key="/visitstoday" icon={<ContactsOutlined />}>
           <NavLink to="/visitstoday" exact={true}>
