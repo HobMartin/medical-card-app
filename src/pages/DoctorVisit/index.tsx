@@ -17,7 +17,6 @@ export function DoctorVisit() {
   const patientHistoryVisit = useStore($patientHistoryVisit);
   const selectedPatient = useStore($selectedPatient);
   const visitOnToday = useStore($visitOnToday);
-  console.log(selectedPatient);
 
   useEffect(() => {
     fetchPatientHistoryVisitFx();

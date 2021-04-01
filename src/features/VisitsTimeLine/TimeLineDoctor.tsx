@@ -12,7 +12,6 @@ import {
   resetSelectedPatient,
 } from "./model/selectedPatient";
 import {
-  $doctorSchedule,
   doctorScheduleDataFx,
   reset,
 } from "../../pages/DoctorSchedule/model/DoctorScheduleData";
@@ -24,12 +23,9 @@ import {
 import "./TimeLineDoctor.css";
 
 export function TimeLineDoctor() {
-  const doctorSchedule = useStore($doctorSchedule);
   const selectedDate = useStore($selectedDate);
   const selectedPatient = useStore($selectedPatient);
   const visitPatientOnToday = useStore($visitOnToday);
-
-  console.log(selectedDate);
 
   useEffect(() => {
     doctorScheduleDataFx();
@@ -41,13 +37,11 @@ export function TimeLineDoctor() {
       resetVisitOnToday();
     };
   }, [selectedDate]);
-  console.log(visitPatientOnToday);
 
   const clickOnPatientNameHandler = (e: any) => {
     setSelectedPatient((e.target as any).textContent);
     modalChange(true);
   };
-  console.log(selectedPatient);
 
   return (
     <div className="timeLine">

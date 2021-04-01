@@ -23,7 +23,6 @@ function DoctorSchedule({ history }: any) {
   }, []);
 
   function visitsOnTodayHandler(value: any) {
-    console.log(value.format("DD.MM.YYYY"));
     updateSelectedDate(value.format("DD.MM.YYYY"));
     history.push("/visitstoday");
   }
