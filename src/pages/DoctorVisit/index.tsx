@@ -38,11 +38,14 @@ export function DoctorVisit() {
               <div className="patient-timeline">
                 <Timeline mode="right">
                   {patientHistoryVisit.map((record) => {
-                    return (
-                      <Timeline.Item label={record.whenVisit}>
-                        {record.doctorQualification}
-                      </Timeline.Item>
-                    );
+                    if (record.name === selectedPatient) {
+                      return (
+                        <Timeline.Item label={record.whenVisit}>
+                          {record.doctorQualification}
+                        </Timeline.Item>
+                      );
+                    }
+                    return null;
                   })}
                 </Timeline>
               </div>
@@ -51,19 +54,6 @@ export function DoctorVisit() {
         }
         return null;
       })}
-      {/* <p>Василь Петрович Мочалка</p>
-      <p>12.04.1976</p>
-      <div className="patient-timeline">
-        <Timeline mode="right">
-          {patientHistoryVisit.map((record) => {
-            return (
-              <Timeline.Item label={record.whenVisit}>
-                {record.doctorQualification}
-              </Timeline.Item>
-            );
-          })}
-        </Timeline>
-      </div> */}
       <AddNoteForm />
     </Modal>
   );

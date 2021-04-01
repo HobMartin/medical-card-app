@@ -1,6 +1,6 @@
 export interface PatientHistoryVisit {
   id: number;
-  patientId: number;
+  name: string;
   doctorQualification: string;
   whenVisit: string;
 }
