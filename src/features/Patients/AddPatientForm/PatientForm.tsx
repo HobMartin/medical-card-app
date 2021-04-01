@@ -35,7 +35,6 @@ const validateMessages = {
 
 export function PatientForm({ form }: any) {
   const editPatient = useStore($patientFromTable);
-  console.log(editPatient);
   useEffect(() => {
     form.setFieldsValue(editPatient);
 
@@ -44,9 +43,7 @@ export function PatientForm({ form }: any) {
     };
   }, [editPatient, form]);
 
-  const onCreate = (values: any) => {
-    console.log("Received values of form: ", values);
-  };
+  const onCreate = (values: any) => {};
   return (
     <Form
       form={form}

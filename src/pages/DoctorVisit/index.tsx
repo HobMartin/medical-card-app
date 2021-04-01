@@ -18,8 +18,6 @@ export function DoctorVisit() {
     fetchPatientHistoryVisitFx();
   }, []);
 
-  console.log(patientHistoryVisit);
-
   return (
     <Modal
       title="Пацієнт"

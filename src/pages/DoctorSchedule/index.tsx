@@ -37,7 +37,6 @@ function getListData(value: any) {
 
 function dateCellRender(value: any) {
   const listData = getListData(value);
-  console.log(value.format("DD.MM.YYYY") === "28.03.2021");
 
   return (
     <ul className="events">
