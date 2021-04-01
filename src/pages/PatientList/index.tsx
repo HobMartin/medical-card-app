@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { columns } from "./columsForTable";
 import { DrawerForm } from "../../features/Patients/AddPatientForm";
 import { Table } from "antd";

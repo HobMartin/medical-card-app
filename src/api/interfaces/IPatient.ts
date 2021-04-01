@@ -9,7 +9,7 @@ export interface IAddress {
 export interface IPatient {
   id: number;
   firstName: string;
-  secondName: string;
+  secondaryName: string;
   lastName: string;
   address: Array<IAddress>;
   birthday: string;

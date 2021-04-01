@@ -1,25 +1,69 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Timeline } from "antd";
-import { drawerChange } from "../model/openDrawer";
+import { useStore } from "effector-react";
 import { modalChange } from "../model/openModal";
+import {
+  $selectedDate,
+  resetSelectedDate,
+} from "../../pages/DoctorSchedule/model/selectedDate";
+import {
+  $selectedPatient,
+  setSelectedPatient,
+  resetSelectedPatient,
+} from "./model/selectedPatient";
+import {
+  $doctorSchedule,
+  doctorScheduleDataFx,
+  reset,
+} from "../../pages/DoctorSchedule/model/DoctorScheduleData";
+import {
+  $visitOnToday,
+  visitOnTodayFx,
+  resetVisitOnToday,
+} from "./model/VisitsOnToday";
 import "./TimeLineDoctor.css";
 
 export function TimeLineDoctor() {
+  const doctorSchedule = useStore($doctorSchedule);
+  const selectedDate = useStore($selectedDate);
+  const selectedPatient = useStore($selectedPatient);
+  const visitPatientOnToday = useStore($visitOnToday);
+
+  console.log(selectedDate);
+
+  useEffect(() => {
+    doctorScheduleDataFx();
+    visitOnTodayFx(selectedDate);
+    return () => {
+      reset();
+      resetSelectedDate();
+      resetSelectedPatient();
+      resetVisitOnToday();
+    };
+  }, [selectedDate]);
+  console.log(visitPatientOnToday);
+
+  const clickOnPatientNameHandler = (e: any) => {
+    setSelectedPatient((e.target as any).textContent);
+    modalChange(true);
+  };
+  console.log(selectedPatient);
+
   return (
     <div className="timeLine">
       <Timeline mode="right">
-        <Timeline.Item label="15:45">
-          <a
-            onClick={() => {
-              modalChange(true);
-            }}
-          >
-            Василь Петрович Мочалка
-          </a>
-        </Timeline.Item>
-        <Timeline.Item label="16:30">Олена Дмитрівна Вовк</Timeline.Item>
-        <Timeline.Item label="17:00">Григорій Любомирович Дуб</Timeline.Item>
-        <Timeline.Item label="18:30">Іван Якович Франко</Timeline.Item>
+        {visitPatientOnToday.map((record) => {
+          if (selectedDate === record.date) {
+            return (
+              <Timeline.Item label={record.time}>
+                <p className="patient-name" onClick={clickOnPatientNameHandler}>
+                  {record.name}
+                </p>
+              </Timeline.Item>
+            );
+          }
+          return null;
+        })}
       </Timeline>
     </div>
   );

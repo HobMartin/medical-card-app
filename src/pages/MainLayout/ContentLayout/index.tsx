@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Breadcrumb } from "antd";
+import { Layout } from "antd";
 import "../Layout.css";
 
 const ContentLayout = (props: any) => {
@@ -8,10 +8,6 @@ const ContentLayout = (props: any) => {
   return (
     <>
       <Content className="content-layout">
-        <Breadcrumb className="breadcrumb-layout">
-          <Breadcrumb.Item>Пацієнти</Breadcrumb.Item>
-          <Breadcrumb.Item></Breadcrumb.Item>
-        </Breadcrumb>
         <div className="site-layout-main">
           <main>{props.children}</main>
         </div>

@@ -8,11 +8,16 @@ import {
   $patientHistoryVisit,
   fetchPatientHistoryVisitFx,
 } from "./model/patientVisitData";
+import { $selectedPatient } from "../../features/VisitsTimeLine/model/selectedPatient";
+import { $visitOnToday } from "../../features/VisitsTimeLine/model/VisitsOnToday";
 import "./DoctorVisit.css";
 
 export function DoctorVisit() {
   const modal = useStore($modalShow);
   const patientHistoryVisit = useStore($patientHistoryVisit);
+  const selectedPatient = useStore($selectedPatient);
+  const visitOnToday = useStore($visitOnToday);
+  console.log(selectedPatient);
 
   useEffect(() => {
     fetchPatientHistoryVisitFx();
@@ -26,19 +31,40 @@ export function DoctorVisit() {
       onOk={() => modalChange(false)}
       onCancel={() => modalChange(false)}
     >
-      <p>Василь Петрович Мочалка</p>
+      {visitOnToday.map((patient) => {
+        if (selectedPatient === patient.name) {
+          return (
+            <>
+              <p>{patient.name}</p>
+              <div className="patient-timeline">
+                <Timeline mode="right">
+                  {patientHistoryVisit.map((record) => {
+                    return (
+                      <Timeline.Item label={record.whenVisit}>
+                        {record.doctorQualification}
+                      </Timeline.Item>
+                    );
+                  })}
+                </Timeline>
+              </div>
+            </>
+          );
+        }
+        return null;
+      })}
+      {/* <p>Василь Петрович Мочалка</p>
       <p>12.04.1976</p>
       <div className="patient-timeline">
         <Timeline mode="right">
-          <Timeline.Item label="12.03.2021">Ендокринолог</Timeline.Item>
-          <Timeline.Item label="01.01.2021">Невропатолог</Timeline.Item>
-          <Timeline.Item label="23.10.2020">Терапевт</Timeline.Item>
-          <Timeline.Item label="18.09.2020">Терапевт</Timeline.Item>
-          <Timeline.Item label="20.06.2020">Терапевт</Timeline.Item>
-          <Timeline.Item label="16.04.2020">Кардіолог</Timeline.Item>
-          <Timeline.Item label="18.04.2020">Терапевт</Timeline.Item>
+          {patientHistoryVisit.map((record) => {
+            return (
+              <Timeline.Item label={record.whenVisit}>
+                {record.doctorQualification}
+              </Timeline.Item>
+            );
+          })}
         </Timeline>
-      </div>
+      </div> */}
       <AddNoteForm />
     </Modal>
   );

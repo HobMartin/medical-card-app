@@ -1,58 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { DoctorVisit } from "../DoctorVisit";
 import { Calendar, Badge } from "antd";
+import { withRouter } from "react-router-dom";
+import {
+  $doctorSchedule,
+  doctorScheduleDataFx,
+  reset,
+} from "./model/DoctorScheduleData";
+import { updateSelectedDate } from "./model/selectedDate";
+import { useStore } from "effector-react";
 import "./DoctorSchedule.css";
-import { Link, NavLink, withRouter } from "react-router-dom";
 
 //TODO create calendar for doctor visits
 
-function getListData(value: any) {
-  let listData;
-  switch (value.date()) {
-    case 8:
-      listData = [
-        { type: "warning", content: "This is warning event." },
-        { type: "success", content: "This is usual event." },
-      ];
-      break;
-    case 10:
-      listData = [
-        { type: "warning", content: "This is warning event." },
-        { type: "success", content: "This is usual event." },
-        { type: "error", content: "This is error event." },
-      ];
-      break;
-    case 15:
-      listData = [
-        { type: "warning", content: "Василь Петрович Мочалка 15:45" },
-        { type: "success", content: "Олена Дмитрівна Вовк 16:30" },
-        { type: "error", content: "Григорій Любомирович Дуб 17:00" },
-        { type: "error", content: "Іван Якович Франко 18:30" },
-      ];
-      break;
-    default:
-  }
-  return listData || [];
-}
-
-function dateCellRender(value: any) {
-  const listData = getListData(value);
-
-  return (
-    <ul className="events">
-      {listData.map((item) => (
-        <li key={item.content}>
-          <Badge status="warning" text={item.content} />
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 function DoctorSchedule({ history }: any) {
-  function visitsOnTodayHandler() {
+  const doctorSchedule = useStore($doctorSchedule);
+  useEffect(() => {
+    doctorScheduleDataFx();
+    return () => {
+      reset();
+    };
+  }, []);
+
+  function visitsOnTodayHandler(value: any) {
+    console.log(value.format("DD.MM.YYYY"));
+    updateSelectedDate(value.format("DD.MM.YYYY"));
     history.push("/visitstoday");
   }
+
+  function dateCellRender(value: any) {
+    return (
+      <ul className="events">
+        {doctorSchedule.map((record) => {
+          if (value.format("DD.MM.YYYY") === record.date) {
+            return (
+              <li key={record.id}>
+                <Badge status={record.type} text={record.name} />
+              </li>
+            );
+          }
+          return null;
+        })}
+      </ul>
+    );
+  }
+
   return (
     <div>
       <DoctorVisit />

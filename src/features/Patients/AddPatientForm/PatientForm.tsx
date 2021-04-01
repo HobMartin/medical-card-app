@@ -39,6 +39,7 @@ export function PatientForm({ form }: any) {
     form.setFieldsValue(editPatient);
 
     return () => {
+      reset();
       form.resetFields();
     };
   }, [editPatient, form]);
