@@ -2,7 +2,7 @@ import { ColumnsType } from "antd/lib/table/Table";
 import { IPatient } from "../../api/interfaces/IPatient";
 import { EditOutlined } from "@ant-design/icons";
 import { drawerChange } from "../../features/model/openDrawer";
-import { updatePatient } from "../../features/model/getPatientFromTable";
+import { updatePatient } from "../../features/model/PatientFromTable";
 
 export const columns: ColumnsType<IPatient> = [
   {

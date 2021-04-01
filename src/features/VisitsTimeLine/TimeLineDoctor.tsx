@@ -1,17 +1,17 @@
-import { Timeline } from "antd";
 import React from "react";
-import { drawerChange } from "../../features/model/openDrawer";
-import { modalChange } from "../../features/model/openModal";
+import { Timeline } from "antd";
+import { drawerChange } from "../model/openDrawer";
+import { modalChange } from "../model/openModal";
+import "./TimeLineDoctor.css";
 
 export function TimeLineDoctor() {
   return (
-    <>
+    <div className="timeLine">
       <Timeline mode="right">
         <Timeline.Item label="15:45">
           <a
             onClick={() => {
               modalChange(true);
-              drawerChange(false);
             }}
           >
             Василь Петрович Мочалка
@@ -21,6 +21,6 @@ export function TimeLineDoctor() {
         <Timeline.Item label="17:00">Григорій Любомирович Дуб</Timeline.Item>
         <Timeline.Item label="18:30">Іван Якович Франко</Timeline.Item>
       </Timeline>
-    </>
+    </div>
   );
 }

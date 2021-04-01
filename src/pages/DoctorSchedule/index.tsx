@@ -1,10 +1,8 @@
 import React from "react";
-
-import { Calendar, Badge } from "antd";
-import { drawerChange } from "../../features/model/openDrawer";
-import "./DoctorSchedule.css";
-import { DrawerDoctorSchedule } from "./DrawerDoctorSchedule";
 import { DoctorVisit } from "../DoctorVisit";
+import { Calendar, Badge } from "antd";
+import "./DoctorSchedule.css";
+import { Link, NavLink, withRouter } from "react-router-dom";
 
 //TODO create calendar for doctor visits
 
@@ -39,6 +37,8 @@ function getListData(value: any) {
 
 function dateCellRender(value: any) {
   const listData = getListData(value);
+  console.log(value.format("DD.MM.YYYY") === "28.03.2021");
+
   return (
     <ul className="events">
       {listData.map((item) => (
@@ -50,15 +50,19 @@ function dateCellRender(value: any) {
   );
 }
 
-export function DoctorSchedule() {
+function DoctorSchedule({ history }: any) {
+  function visitsOnTodayHandler() {
+    history.push("/visitstoday");
+  }
   return (
     <div>
       <DoctorVisit />
-      <DrawerDoctorSchedule />
       <Calendar
         dateCellRender={dateCellRender}
-        onSelect={() => drawerChange(true)}
+        onSelect={visitsOnTodayHandler}
       />
     </div>
   );
 }
+
+export default withRouter(DoctorSchedule);

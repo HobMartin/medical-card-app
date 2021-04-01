@@ -12,6 +12,6 @@ export interface IPatient {
   secondName: string;
   lastName: string;
   address: Array<IAddress>;
-  birthday: Date;
+  birthday: string;
   phone: string;
 }

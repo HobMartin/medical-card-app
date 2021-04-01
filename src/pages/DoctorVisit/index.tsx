@@ -1,14 +1,25 @@
 //TODO if clicked on recond in Doctor Schedule show Patient Information, Last Visits, History. Add new note or recipe to Card
-
+import React, { useEffect } from "react";
+import { AddNoteForm } from "./AddNoteForm";
 import { Modal, Timeline } from "antd";
 import { useStore } from "effector-react";
-import React from "react";
 import { $modalShow, modalChange } from "../../features/model/openModal";
+import {
+  $patientHistoryVisit,
+  fetchPatientHistoryVisitFx,
+} from "./model/patientVisitData";
 import "./DoctorVisit.css";
-import { AddNoteForm } from "./AddNoteForm";
 
 export function DoctorVisit() {
   const modal = useStore($modalShow);
+  const patientHistoryVisit = useStore($patientHistoryVisit);
+
+  useEffect(() => {
+    fetchPatientHistoryVisitFx();
+  }, []);
+
+  console.log(patientHistoryVisit);
+
   return (
     <Modal
       title="Пацієнт"

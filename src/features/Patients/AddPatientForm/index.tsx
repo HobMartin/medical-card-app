@@ -6,15 +6,14 @@ import "./Modal.css";
 import { PatientForm } from "./PatientForm";
 import { $drawerShow, drawerChange } from "../../model/openDrawer";
 import { useStore } from "effector-react";
-import { reset } from "../../model/getPatientFromTable";
-import { addPatientFx } from "../../model/getNewPatientData";
+import { reset } from "../../model/PatientFromTable";
+import { addPatientFx } from "../../model/NewPatientData";
 
-export function ModalForm({ patients }: any) {
+export function DrawerForm({ patients }: any) {
   const drawerShow = useStore($drawerShow);
 
   const [form] = Form.useForm();
   const onCreate = (values: any) => {
-    console.log("Received values of form: ", values);
     drawerChange(false);
   };
 
@@ -56,8 +55,9 @@ export function ModalForm({ patients }: any) {
             Submit
           </Button>
         }
+        destroyOnClose={true}
       >
-        <PatientForm form={form} patients={patients} />
+        <PatientForm form={form} />
       </Drawer>
     </div>
   );

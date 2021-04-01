@@ -14,9 +14,9 @@ export function AddNoteForm() {
                 <>
                   <Form.Item
                     {...restField}
-                    name={[name, "first"]}
-                    fieldKey={[fieldKey, "first"]}
-                    rules={[{ required: true, message: "Missing first name" }]}
+                    name={[name, "note"]}
+                    fieldKey={[fieldKey, "note"]}
+                    rules={[{ required: true, message: "Ви не ввели запис" }]}
                   >
                     <TextArea placeholder="Додати запис..." />
                     <MinusCircleOutlined onClick={() => remove(name)} />

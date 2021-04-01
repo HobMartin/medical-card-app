@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "patientId": 3,
+        "doctorQualification": "Ендокринолог",
+        "whenVisit" : "12.03.2021"
+
+    },
+    {
+        "id": 2,
+        "patientId": 2,
+        "doctorQualification": "Терапевт",
+        "whenVisit" : "12.03.2021"
+
+    },
+    {
+        "id": 3,
+        "patientId": 3,
+        "doctorQualification": "Терапевт",
+        "whenVisit" : "12.03.2021"
+
+    },
+    {
+        "id": 4,
+        "patientId": 3,
+        "doctorQualification": "Невропатолог",
+        "whenVisit" : "12.03.2021"
+
+    },
+    {
+        "id": 5,
+        "patientId": 3,
+        "doctorQualification": "Травматолог",
+        "whenVisit" : "12.03.2021"
+
+    },
+    {
+        "id": 6,
+        "patientId": 3,
+        "doctorQualification": "Терапевт",
+        "whenVisit" : "12.03.2021"
+
+    },    {
+        "id": 7,
+        "patientId": 3,
+        "doctorQualification": "Отоларинголог",
+        "whenVisit" : "12.03.2021"
+
+    }
+]

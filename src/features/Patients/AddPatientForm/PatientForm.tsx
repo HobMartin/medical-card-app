@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
-
 import { Form, Input, DatePicker } from "antd";
-import "./Modal.css";
 import { useStore } from "effector-react";
-// import { $patients } from "../../model/getPatientData";
-import { $patientFromTable, reset } from "../../model/getPatientFromTable";
-// import { addPatientFx } from "../../model/getNewPatientData";
+import { $patientFromTable, reset } from "../../model/PatientFromTable";
+import "./Modal.css";
 
 const layout = {
   labelCol: { span: 8 },
@@ -41,12 +38,11 @@ export function PatientForm({ form }: any) {
   console.log(editPatient);
   useEffect(() => {
     form.setFieldsValue(editPatient);
+
     return () => {
       form.resetFields();
     };
   }, [editPatient, form]);
-  console.log(editPatient);
-  // console.log(patientId);
 
   const onCreate = (values: any) => {
     console.log("Received values of form: ", values);
