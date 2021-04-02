@@ -13,7 +13,7 @@ export const columns: ColumnsType<ICardInfo> = [
     key: "id",
   },
   {
-    title: "ЛІкар",
+    title: "Лікар",
     dataIndex: "doctor",
     key: "id",
   },
