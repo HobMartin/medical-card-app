@@ -1,6 +1,7 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import { Form, Input, DatePicker } from "antd";
+import { useStore } from "effector-react";
+import { $patientFromTable, reset } from "../../model/PatientFromTable";
 import "./Modal.css";
 
 const layout = {
@@ -21,24 +22,32 @@ const validateMessages = {
 };
 /* eslint-enable no-template-curly-in-string */
 
-const dateFormat = "DD/MM/YYYY";
-const config = {
-  rules: [
-    {
-      type: "object" as const,
-      required: true,
-      message: "Введіть дану народження!",
-    },
-  ],
-};
+// const dateFormat = "DD.MM.YYYY";
+// const config = {
+//   rules: [
+//     {
+//       type: "object" as const,
+//       required: true,
+//       message: "Введіть дану народження!",
+//     },
+//   ],
+// };
 
-export function PatientForm(props: any) {
-  const onCreate = (values: any) => {
-    console.log("Received values of form: ", values);
-  };
+export function PatientForm({ form }: any) {
+  const editPatient = useStore($patientFromTable);
+  useEffect(() => {
+    form.setFieldsValue(editPatient);
+
+    return () => {
+      reset();
+      form.resetFields();
+    };
+  }, [editPatient, form]);
+
+  const onCreate = (values: any) => {};
   return (
     <Form
-      form={props.form}
+      form={form}
       {...layout}
       name="nest-messages"
       onFinish={onCreate}
@@ -99,9 +108,9 @@ export function PatientForm(props: any) {
       >
         <Input />
       </Form.Item>
-      <Form.Item name={"birthday"} label="Дата народження" {...config}>
+      {/* <Form.Item name={"birthday"} label="Дата народження" {...config}>
         <DatePicker format={dateFormat} />
-      </Form.Item>
+      </Form.Item> */}
       <Form.Item name={"phone"} label="Телефон">
         <Input />
       </Form.Item>

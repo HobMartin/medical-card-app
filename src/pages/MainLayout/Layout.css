@@ -15,24 +15,26 @@
 }
 
 .site-layout .site-layout-background {
+  height: 80px;
   background: #fff;
 }
 
 .site-layout-main {
+  margin-top: 30px;
   background: #fff;
   padding: 24px;
   min-height: 360px;
 }
 
 .header {
+  background: #fff;
   padding: 0;
-  height: 80px;
+  height: 90px;
 }
 
 .user-avatar {
   margin-top: 10px;
   text-align: right;
-  margin-right: 20px;
 }
 
 .avatar {
@@ -45,8 +47,4 @@
 
 .content-layout {
   margin: 0 16px;
-}
-
-.breadcrumb-layout {
-  margin: 16px 0;
 }

@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Ігор Іванович Дупло",
+        "doctorQualification": "Ендокринолог",
+        "whenVisit" : "12.03.2021"
+
+    },
+    {
+        "id": 2,
+        "name": "Іван Григолович Палійчук",
+        "doctorQualification": "Терапевт",
+        "whenVisit" : "12.03.2021"
+
+    },
+    {
+        "id": 3,
+        "name": "Василь Дмитрович Комар",
+        "doctorQualification": "Терапевт",
+        "whenVisit" : "12.04.2021"
+
+    },
+    {
+        "id": 4,
+        "name": "Василь Дмитрович Комар",
+        "doctorQualification": "Невропатолог",
+        "whenVisit" : "12.03.2021"
+
+    },
+    {
+        "id": 5,
+        "name": "Микола Петрович Лугуб",
+        "doctorQualification": "Травматолог",
+        "whenVisit" : "12.03.2021"
+
+    },
+    {
+        "id": 6,
+        "name": "Микола Петрович Лугуб",
+        "doctorQualification": "Терапевт",
+        "whenVisit" : "12.03.2021"
+
+    },    
+    {
+        "id": 7,
+        "name": "Микола Петрович Лугуб",
+        "doctorQualification": "Отоларинголог",
+        "whenVisit" : "12.03.2021"
+
+    },    
+    {
+        "id": 8,
+        "name": "Іван Григорович Палійчук",
+        "doctorQualification": "Травматолог",
+        "whenVisit" : "17.03.2021"
+
+    }
+]

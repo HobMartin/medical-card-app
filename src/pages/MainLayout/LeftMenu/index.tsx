@@ -8,20 +8,26 @@ import {
   UsergroupAddOutlined,
 } from "@ant-design/icons";
 import "../Layout.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import Logo from "./logo";
 
-function LeftMenu() {
+function LeftMenu(props: any) {
   const { Sider } = Layout;
   const [collapsed, setCollapsed] = useState(false);
   const onCollapse = (collapsed: boolean) => {
     setCollapsed(collapsed);
   };
+  const { location } = props;
   return (
     <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-      <Menu theme="dark" mode="inline">
+      <Menu
+        theme="dark"
+        mode="inline"
+        defaultSelectedKeys={["/"]}
+        selectedKeys={[location.pathname]}
+      >
         <div className="logo">
-          <Menu.Item key="0">
+          <Menu.Item key="/">
             <NavLink to="/" exact={true}>
               <Logo />
             </NavLink>
@@ -30,14 +36,18 @@ function LeftMenu() {
         <Menu.Item key="1" icon={<IdcardOutlined />}>
           Медична карта
         </Menu.Item>
-        <Menu.Item key="2" icon={<ContactsOutlined />}>
-          Записи на сьогодні
+        <Menu.Item key="/visitstoday" icon={<ContactsOutlined />}>
+          <NavLink to="/visitstoday" exact={true}>
+            Записи на сьогодні
+          </NavLink>
         </Menu.Item>
-        <Menu.Item key="3" icon={<CalendarOutlined />}>
-          Календар
+        <Menu.Item key="/schedule" icon={<CalendarOutlined />}>
+          <NavLink to="/schedule" exact={true}>
+            Календар
+          </NavLink>
         </Menu.Item>
 
-        <Menu.Item key="4" icon={<TeamOutlined />}>
+        <Menu.Item key="/patientlist" icon={<TeamOutlined />}>
           <NavLink to="/patientlist" exact={true}>
             Список пацієнтів
           </NavLink>
@@ -51,4 +61,4 @@ function LeftMenu() {
   );
 }
 
-export default LeftMenu;
+export default withRouter(LeftMenu);
