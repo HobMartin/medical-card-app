@@ -5,7 +5,6 @@ import {
   ContactsOutlined,
   CalendarOutlined,
   TeamOutlined,
-  UsergroupAddOutlined,
 } from "@ant-design/icons";
 import "../Layout.css";
 import { NavLink, withRouter } from "react-router-dom";
@@ -53,10 +52,6 @@ function LeftMenu(props: any) {
           <NavLink to="/patientlist" exact={true}>
             Список пацієнтів
           </NavLink>
-        </Menu.Item>
-
-        <Menu.Item key="5" icon={<UsergroupAddOutlined />}>
-          Список лікарів
         </Menu.Item>
       </Menu>
     </Sider>

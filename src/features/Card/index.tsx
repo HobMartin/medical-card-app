@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { Table } from "antd";
 import { $cardInfo, cardInfoDataFx, resetCardInfo } from "./model/CardInfo";
 import { columns } from "./columns";
+import "./card.css";
 
 export function CardTable() {
   const cardInfo = useStore($cardInfo);
@@ -14,9 +15,33 @@ export function CardTable() {
       resetCardInfo();
     };
   }, []);
+
+  const expandedRowRender = (record: any) =>
+    record.prescription
+      .split(",")
+      .map((item: any) => item.trim())
+      .map((medicine: any) => {
+        return (
+          <a
+            href={`https://liki24.com/search/?q=${medicine}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {medicine} &nbsp;&nbsp;
+          </a>
+        );
+      });
   return (
-    <div>
-      <Table columns={columns} dataSource={cardInfo} />
+    <div className="card">
+      <Table
+        columns={columns}
+        expandable={{
+          expandedRowRender,
+          rowExpandable: (record) => record.prescription !== "",
+          expandRowByClick: true,
+        }}
+        dataSource={cardInfo}
+      />
     </div>
   );
 }
