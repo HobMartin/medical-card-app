@@ -9,6 +9,10 @@ import "./card.css";
 export function CardTable() {
   const cardInfo = useStore($cardInfo);
 
+  function getRandomInt(max: number) {
+    return Math.floor(Math.random() * max) + 1;
+  }
+
   useEffect(() => {
     cardInfoDataFx();
     return () => {
@@ -22,13 +26,22 @@ export function CardTable() {
       .map((item: any) => item.trim())
       .map((medicine: any) => {
         return (
-          <a
-            href={`https://liki24.com/search/?q=${medicine}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {medicine} &nbsp;&nbsp;
-          </a>
+          <>
+            <ul>
+              <li>
+                <a
+                  href={`https://liki24.com/search/?q=${medicine}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {medicine} &nbsp;&nbsp;
+                </a>
+                <span>
+                  {getRandomInt(3)} рази на день, {getRandomInt(30)} днів
+                </span>
+              </li>
+            </ul>
+          </>
         );
       });
   return (
