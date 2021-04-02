@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Form, Input, DatePicker } from "antd";
+import { Form, Input } from "antd";
 import { useStore } from "effector-react";
 import { $patientFromTable, reset } from "../../model/PatientFromTable";
 import "./Modal.css";
@@ -21,18 +21,6 @@ const validateMessages = {
   },
 };
 /* eslint-enable no-template-curly-in-string */
-
-// const dateFormat = "DD.MM.YYYY";
-// const config = {
-//   rules: [
-//     {
-//       type: "object" as const,
-//       required: true,
-//       message: "Введіть дану народження!",
-//     },
-//   ],
-// };
-
 export function PatientForm({ form }: any) {
   const editPatient = useStore($patientFromTable);
   useEffect(() => {
@@ -108,9 +96,6 @@ export function PatientForm({ form }: any) {
       >
         <Input />
       </Form.Item>
-      {/* <Form.Item name={"birthday"} label="Дата народження" {...config}>
-        <DatePicker format={dateFormat} />
-      </Form.Item> */}
       <Form.Item name={"phone"} label="Телефон">
         <Input />
       </Form.Item>
